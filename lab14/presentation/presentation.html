@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Взваров Михаил, НПИбд-01-25">
+  <title>Лабораторная работа № 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Лабораторная работа № 14</h1>
+  <p class="subtitle">Программирование в командном процессоре ОС
+UNIX</p>
+  <p class="author">Взваров Михаил, НПИбд-01-25</p>
+</section>
+
+<section id="лабораторная-работа-14" class="slide level1">
+<h1>Лабораторная работа № 14</h1>
+<h2
+id="программирование-в-командном-процессоре-ос-unix">Программирование в
+командном процессоре ОС UNIX</h2>
+<p><strong>Взваров Михаил</strong><br />
+<strong>НПИбд-01-25</strong></p>
+</section>
+<section id="цель-работы" class="slide level1">
+<h1>Цель работы</h1>
+<p>Получить практические навыки написания командных файлов в Bash:</p>
+<ul>
+<li>работа с системной справочной информацией;</li>
+<li>генерация случайных последовательностей;</li>
+<li>использование циклов и функций;</li>
+<li>синхронизация процессов с помощью файлового семафора.</li>
+</ul>
+</section>
+<section id="выполненные-задания" class="slide level1">
+<h1>Выполненные задания</h1>
+<p>В ходе лабораторной работы были реализованы три командных файла:</p>
+<ol type="1">
+<li><code>myman.sh</code> — вывод справочной информации о команде;</li>
+<li><code>random_letters.sh</code> — генерация случайных букв;</li>
+<li><code>semaphore.sh</code> — синхронизация процессов с помощью
+lock-файла.</li>
+</ol>
+</section>
+<section id="скрипт-myman.sh" class="slide level1">
+<h1>Скрипт myman.sh</h1>
+<p>Скрипт принимает имя команды и выполняет поиск соответствующей
+справочной страницы в каталоге <code>/usr/share/man/man1</code>.</p>
+<p>Поддерживается поиск обычных и сжатых файлов справки.</p>
+</section>
+<section id="исходный-код-myman.sh" class="slide level1">
+<h1>Исходный код myman.sh</h1>
+<figure>
+<img data-src="../images/Вставленное%20изображение.png"
+alt="Листинг myman.sh" />
+<figcaption aria-hidden="true">Листинг myman.sh</figcaption>
+</figure>
+</section>
+<section id="результат-работы-myman.sh" class="slide level1">
+<h1>Результат работы myman.sh</h1>
+<p>Скрипт был запущен для команды <code>ls</code>.</p>
+<p>Была найдена и открыта соответствующая справочная страница.</p>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(2).png"
+alt="Результат myman.sh" />
+<figcaption aria-hidden="true">Результат myman.sh</figcaption>
+</figure>
+</section>
+<section id="скрипт-random_letters.sh" class="slide level1">
+<h1>Скрипт random_letters.sh</h1>
+<p>Скрипт генерирует случайные последовательности латинских букв.</p>
+<p>Для генерации используется встроенная переменная Bash
+<code>RANDOM</code>.</p>
+<p>Параметрами задаются длина последовательности и режим использования
+заглавных букв.</p>
+</section>
+<section id="исходный-код-random_letters.sh" class="slide level1">
+<h1>Исходный код random_letters.sh</h1>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(3).png"
+alt="Листинг random_letters.sh" />
+<figcaption aria-hidden="true">Листинг random_letters.sh</figcaption>
+</figure>
+</section>
+<section id="результат-random_letters.sh" class="slide level1">
+<h1>Результат random_letters.sh</h1>
+<p>Были получены:</p>
+<ul>
+<li>случайная последовательность заданной длины;</li>
+<li>последовательность строчных букв;</li>
+<li>последовательность заглавных букв;</li>
+<li>смешанная последовательность.</li>
+</ul>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(4).png"
+alt="Результат random_letters.sh" />
+<figcaption aria-hidden="true">Результат random_letters.sh</figcaption>
+</figure>
+</section>
+<section id="скрипт-semaphore.sh" class="slide level1">
+<h1>Скрипт semaphore.sh</h1>
+<p>Скрипт демонстрирует синхронизацию нескольких процессов при доступе к
+общему ресурсу.</p>
+<p>В качестве семафора используется файл:</p>
+<p><code>/tmp/semaphore.lock</code></p>
+</section>
+<section id="принцип-работы-семафора" class="slide level1">
+<h1>Принцип работы семафора</h1>
+<p>Если lock-файл удалось создать, процесс получает доступ к
+ресурсу.</p>
+<p>Если lock-файл уже существует, другой процесс ожидает заданное время
+и повторяет попытку.</p>
+<p>После завершения работы ресурс освобождается удалением
+lock-файла.</p>
+</section>
+<section id="исходный-код-semaphore.sh" class="slide level1">
+<h1>Исходный код semaphore.sh</h1>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(5).png"
+alt="Листинг semaphore.sh" />
+<figcaption aria-hidden="true">Листинг semaphore.sh</figcaption>
+</figure>
+</section>
+<section id="проверка-синхронизации" class="slide level1">
+<h1>Проверка синхронизации</h1>
+<p>Для проверки одновременно были запущены два экземпляра программы.</p>
+<p>Один процесс захватил ресурс, а второй обнаружил занятость ресурса и
+ожидал его освобождения.</p>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(6).png"
+alt="Работа семафора" />
+<figcaption aria-hidden="true">Работа семафора</figcaption>
+</figure>
+</section>
+<section id="использованные-средства-bash" class="slide level1">
+<h1>Использованные средства Bash</h1>
+<p>В работе применялись:</p>
+<ul>
+<li>аргументы командной строки;</li>
+<li>условные операторы;</li>
+<li>циклы <code>for</code> и <code>while</code>;</li>
+<li>функции;</li>
+<li>переменная <code>RANDOM</code>;</li>
+<li>команда <code>sleep</code>;</li>
+<li>режим <code>noclobber</code>;</li>
+<li>работа с файлами и каталогами.</li>
+</ul>
+</section>
+<section id="результаты-работы" class="slide level1">
+<h1>Результаты работы</h1>
+<p>В результате были созданы и проверены три Bash-скрипта.</p>
+<p>Получены практические навыки:</p>
+<ul>
+<li>обработки аргументов;</li>
+<li>работы со справочными файлами UNIX;</li>
+<li>генерации случайных данных;</li>
+<li>организации взаимодействия процессов.</li>
+</ul>
+</section>
+<section id="вывод" class="slide level1">
+<h1>Вывод</h1>
+<p>В ходе лабораторной работы были закреплены навыки программирования в
+оболочке Bash.</p>
+<p>Были реализованы собственный механизм просмотра справочной
+информации, генератор случайных последовательностей и файловый семафор
+для синхронизации процессов.</p>
+<p>Цель лабораторной работы достигнута.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^5/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^5/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
