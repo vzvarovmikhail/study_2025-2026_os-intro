@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Emacs Text Editor">
+  <title>Laboratory Work No. 11</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Laboratory Work No. 11</h1>
+  <p class="author">Emacs Text Editor</p>
+  <p class="date">Mikhail Vzvarov — NPIbd-01-25</p>
+</section>
+
+<section id="laboratory-work-no.-11" class="slide level1">
+<h1>Laboratory Work No. 11</h1>
+<h2 id="emacs-text-editor">Emacs Text Editor</h2>
+<p><strong>Discipline:</strong> Operating Systems</p>
+<p><strong>Student:</strong> Mikhail Vzvarov<br />
+<strong>Group:</strong> NPIbd-01-25</p>
+</section>
+<section id="objective" class="slide level1">
+<h1>Objective</h1>
+<ul>
+<li>Become familiar with the Linux operating system.</li>
+<li>Obtain practical skills in working with the Emacs text editor.</li>
+<li>Learn basic Emacs keyboard commands.</li>
+<li>Practice working with buffers, windows, search and text
+editing.</li>
+</ul>
+</section>
+<section id="emacs-basics" class="slide level1">
+<h1>Emacs Basics</h1>
+<p>Emacs is a powerful and extensible text editor.</p>
+<p>Main concepts:</p>
+<ul>
+<li><strong>Buffer</strong> — contains text or other information.</li>
+<li><strong>Frame</strong> — the main Emacs graphical frame.</li>
+<li><strong>Window</strong> — an area displaying a buffer.</li>
+<li><strong>Minibuffer</strong> — used to enter commands and additional
+information.</li>
+<li><strong>Point</strong> — the current cursor position.</li>
+<li><strong>Mode</strong> — defines editing behaviour for a particular
+type of content.</li>
+</ul>
+</section>
+<section id="important-commands" class="slide level1">
+<h1>Important Commands</h1>
+<pre><code>C-x C-f    Open a file
+C-x C-s    Save a file
+C-x C-c    Exit Emacs
+C-a        Beginning of line
+C-e        End of line
+M-&lt;        Beginning of buffer
+M-&gt;        End of buffer
+C-k        Kill text to end of line
+C-y        Yank text
+C-x u      Undo</code></pre>
+</section>
+<section id="creating-and-opening-the-file" class="slide level1">
+<h1>Creating and Opening the File</h1>
+<p>The practical work was performed in:</p>
+<pre><code>~/reports/lab11</code></pre>
+<p>The created file was:</p>
+<pre><code>lab011</code></pre>
+<p>It was opened in Emacs with:</p>
+<pre><code>emacs lab011</code></pre>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(3).png"
+alt="File opened in Emacs" />
+<figcaption aria-hidden="true">File opened in Emacs</figcaption>
+</figure>
+</section>
+<section id="working-with-buffers" class="slide level1">
+<h1>Working with Buffers</h1>
+<p>Emacs can keep many buffers active at the same time.</p>
+<p>The buffer list was opened with:</p>
+<pre><code>C-x C-b</code></pre>
+<p>A different buffer can be selected with:</p>
+<pre><code>C-x b</code></pre>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(4).png"
+alt="Active Emacs buffers" />
+<figcaption aria-hidden="true">Active Emacs buffers</figcaption>
+</figure>
+</section>
+<section id="working-with-windows" class="slide level1">
+<h1>Working with Windows</h1>
+<p>The Emacs frame was divided into several windows.</p>
+<p>Commands used:</p>
+<pre><code>C-x 3    Split vertically
+C-x 2    Split horizontally
+C-x o    Select another window
+C-x 1    Keep only the current window</code></pre>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(5).png"
+alt="Emacs frame divided into windows" />
+<figcaption aria-hidden="true">Emacs frame divided into
+windows</figcaption>
+</figure>
+</section>
+<section id="text-search" class="slide level1">
+<h1>Text Search</h1>
+<p>Forward incremental search was started with:</p>
+<pre><code>C-s</code></pre>
+<p>Other useful commands:</p>
+<pre><code>C-r    Search backward
+M-%    Query replace
+C-g    Cancel the current operation</code></pre>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(6).png"
+alt="Text search in Emacs" />
+<figcaption aria-hidden="true">Text search in Emacs</figcaption>
+</figure>
+</section>
+<section id="file-verification" class="slide level1">
+<h1>File Verification</h1>
+<p>The file contents were checked from the terminal with:</p>
+<pre><code>cat -n lab011</code></pre>
+<p>This made it possible to verify the final contents after editing.</p>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(7).png"
+alt="Final file contents" />
+<figcaption aria-hidden="true">Final file contents</figcaption>
+</figure>
+</section>
+<section id="final-verification" class="slide level1">
+<h1>Final Verification</h1>
+<p>At the end of the laboratory work, the working directory, available
+files and final contents were checked.</p>
+<figure>
+<img data-src="../images/Вставленное%20изображение%20(8).png"
+alt="Final verification" />
+<figcaption aria-hidden="true">Final verification</figcaption>
+</figure>
+</section>
+<section id="results" class="slide level1">
+<h1>Results</h1>
+<p>During the laboratory work:</p>
+<ul>
+<li>a file was created and edited in Emacs;</li>
+<li>keyboard commands for editing and navigation were practiced;</li>
+<li>active buffers were examined;</li>
+<li>the frame was split into multiple windows;</li>
+<li>forward text search was performed;</li>
+<li>the final file was verified in the terminal.</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level1">
+<h1>Conclusion</h1>
+<p>The basic features of the Emacs text editor were studied.</p>
+<p>Practical skills were obtained in:</p>
+<ul>
+<li>editing text;</li>
+<li>using keyboard shortcuts;</li>
+<li>working with buffers;</li>
+<li>managing multiple windows;</li>
+<li>searching text.</li>
+</ul>
+<p>The objective of the laboratory work was achieved.</p>
+</section>
+<section id="thank-you" class="slide level1">
+<h1>Thank You</h1>
+<h2 id="questions">Questions?</h2>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^5/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^5/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
